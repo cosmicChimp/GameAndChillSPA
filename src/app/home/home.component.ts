@@ -8,25 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   registerMode = false;
-  values: any;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.getValues();
   }
 
   registerToggle() {
     this.registerMode = true
-  }
-
-  getValues() {
-    this.http.get("https://localhost:5001/api/values").subscribe(
-      (resp) => {
-        this.values = resp;
-      }, error => {
-        console.log(error);
-      });
   }
 
   cancelRegisterMode(registerMode: boolean) {
