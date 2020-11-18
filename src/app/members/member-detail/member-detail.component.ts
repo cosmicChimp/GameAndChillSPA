@@ -20,19 +20,22 @@ export class MemberDetailComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   ngOnInit() {
-    this.loadUser();
+    this.route.data.subscribe((data) => {
+      // tslint:disable-next-line: no-string-literal
+      this.user = data['user'];
+    });
   }
 
   // tslint:disable-next-line: typedef
-  loadUser() {
-    // tslint:disable-next-line: no-string-literal
-    this.userService.getUser(+this.route.snapshot.params['id']).subscribe(
-      (user: User) => {
-        this.user = user;
-      },
-      (error) => {
-        this.alertify.error(error);
-      }
-    );
-  }
+  // loadUser() {
+  //   // tslint:disable-next-line: no-string-literal
+  //   this.userService.getUser(+this.route.snapshot.params['id']).subscribe(
+  //     (user: User) => {
+  //       this.user = user;
+  //     },
+  //     (error) => {
+  //       this.alertify.error(error);
+  //     }
+  //   );
+  // }
 }
