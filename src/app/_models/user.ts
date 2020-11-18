@@ -8,7 +8,7 @@ export interface User {
   gamerHandle: string;
   platforms: string;
   games: string;
-  create: Date;
+  created: Date;
   lastActive: Date;
   photoUrl: string;
   city: string;
