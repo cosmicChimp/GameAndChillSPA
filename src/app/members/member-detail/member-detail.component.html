@@ -13,6 +13,10 @@
             <p>{{user.age}}</p>
           </div>
           <div>
+            <strong>Platform(s):</strong>
+            <p>{{user.platforms}}</p>
+          </div>
+          <div>
             <strong>Last Active:</strong>
             <p>{{user.lastActive}}</p>
           </div>
@@ -33,7 +37,7 @@
       <div class="tab-panel">
         <tabset class="member-tabset">
           <tab heading="About {{user.gamerHandle}}">
-            <h4>Description</h4>
+            <h4>About Me</h4>
             <p>{{user.intro}}</p>
             <h4>Looking For</h4>
             <p>{{user.lookingFor}}</p>
@@ -42,6 +46,12 @@
             <h4>Interests</h4>
             <p>{{user.interests}}</p>
           </tab>
+          <!-- <tab heading="Top Games">
+            <h4>Top Games</h4>
+            <ul *ngFor="let games of user">
+              <li>{{user.games}}</li>
+            </ul>
+          </tab> -->
           <tab heading="Photos">
             <ngx-gallery 
             style="display: inline-block; margin-bottom: 20px;" 
